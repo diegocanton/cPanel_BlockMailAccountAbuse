@@ -26,8 +26,8 @@ cat /tmp/suspenderconta | xargs -I '{}' whmapi1 suspend_outgoing_email user={}
 ### Removemos o arquivo para não voltar a suspender o cliente após resolver a problema
 rm -rf /tmp/suspenderconta
 
-### Envia e-mail para o suporte@ensite alertando o bloqueio
-echo "Bloqueamos o usuario por ter enviado mais de 100 mensagens na ultima hora para destinos que negaram a recepcao." | mail -s "Usuario `cat /tmp/suspenderconta` bloqueado em `hostname` por envio de SPAM" suporte@ensite.com.br;
+### Envia e-mail para um email alertando o bloqueio
+echo "Bloqueamos o usuario por ter enviado mais de 100 mensagens na ultima hora para destinos que negaram a recepcao." | mail -s "Usuario `cat /tmp/suspenderconta` bloqueado em `hostname` por envio de SPAM" <email>;
 
 
 
