@@ -22,6 +22,11 @@ cat /tmp/suspenderconta | awk -F "@" '{print "whmapi1 listaccts search="$2" sear
 cat /tmp/suspenderconta | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email hold_outgoing email="`cat /tmp/suspenderconta`
 cat /tmp/suspenderconta | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email hold_outgoing email="`cat /tmp/suspenderconta` | sh
 
+# Como contar quantidade de IPs usados para logar
+#cat /var/log/exim_mainlog | grep `cat /tmp/suspenderconta` | egrep "dovecot_(login|plain)" | awk -F '[' '{print $2}' | awk -F ']' '{print $1}' | sort -n | uniq -c | sort -n | wc -l
+
+
+
 ### Reiniciamos o exim para termos certeza que a conta foi bloqueada
 /scripts/restartsrv_exim
 
