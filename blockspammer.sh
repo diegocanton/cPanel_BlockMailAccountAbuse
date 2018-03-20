@@ -1,4 +1,6 @@
 #!/bin/bash
+set notify="suporte@ensite.com.br"
+
 
 ### Lista os dominios locais e exporta para um arquivo para usar em uma filtragem futura
 whmapi1 listaccts  | grep domain | awk -F ":" '{print $2}' | sed "s/ /@/g" > /tmp/domainslocal
@@ -31,7 +33,7 @@ cat /tmp/suspenderconta | awk -F "@" '{print "whmapi1 listaccts search="$2" sear
 /scripts/restartsrv_exim
 
 ### Envia e-mail para um email alertando o bloqueio
-echo "Bloqueamos o usuario "`cat /tmp/suspenderconta`" por ter enviado mais de 100 mensagens na ultima hora para destinos que negaram a recepcao." | mail -s "Usuario "`cat /tmp/suspenderconta`" bloqueado em "`hostname`" por envio de SPAM" suporte@ensite.com.br
+echo "Bloqueamos o usuario "`cat /tmp/suspenderconta`" por ter enviado mais de 100 mensagens na ultima hora para destinos que negaram a recepcao." | mail -s "Usuario "`cat /tmp/suspenderconta`" bloqueado em "`hostname`" por envio de SPAM" $notify
 
 ### Removemos o arquivo para não voltar a suspender o cliente após resolver a problema
 rm -rf /tmp/suspenderconta
