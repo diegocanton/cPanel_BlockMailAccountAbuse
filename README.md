@@ -20,5 +20,8 @@ Como tive uma redução dos eventos grandes de SPAM, e pelo risco de bloquear us
 O Script massivespammer.sh <hour> irá buscar no log as linhas que representem logins de um usuário, se nesse tempo X uma conta tiver realizado mais de 100 logins será suspensa usando as API do cPanel/WHM e em seguida irá disparar um e-mail notificando.
 A ideia é roda-lo no CRON com intervalos periódicos, como 15 minutos, onde ele irá verificar a última hora.
 
+O Script multipleloginspammer.sh <hour> irá realizar checar o log e identificar se uma conta recebeu login de muitos IPs, no caso de ter recebido login de mais de 3 IPs o sistema irá suspender esta conta sob suspeita de ser um SPAMMER.
+A ideia é roda-lo no CRON com intervalos periódicos, como 15 minutos, onde ele irá verificar a última hora.
+
 
 O Script blockspammer.sh é apenas um teste preliminar, que será descartado no futuro.
