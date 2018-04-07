@@ -30,7 +30,9 @@ O Script blockspammer.sh é apenas um teste preliminar, que será descartado no 
 Ainda busco uma ideia para identificar e barrar as contas que recebem abuso com menor frequência.
 Exemplo: Enviam 5 mensagens hora e usam o mesmo IP; Julgo dificil identifica-los, pois trata-se de comportamento praticamente comum de um usuário.
 
-+Ao usar esse conjunto de scripts, você assume todos os riscos envolvidos, eximindo os autores de qualquer responsabilidade relacionada ao uso.
+Garantias
+-----
+Ao usar esse conjunto de scripts, você assume todos os riscos envolvidos, eximindo os autores de qualquer responsabilidade relacionada ao uso.
 
 Esses scripts são fornecidos como estão, não havendo qualquer garantias. 
 Incluimos o aviso de que não foram realmente testados e se referem a ideias de como monitorar o servidor visando evitar que o IP do servidor seja listado em blacklist.
@@ -70,7 +72,9 @@ The blockspammer.sh script is only a preliminary test, which will be discarded i
 I'm still looking for an idea to identify and bar accounts that get abused less often.
 Example: Send 5 time messages and use the same IP; I find it difficult to identify them, because it is a user's almost common behavior.
 
-+By using this set of scripts, you assume all risks involved, freeing the authors from any liability related to the use.
+No Warranties
+--------
+By using this set of scripts, you assume all risks involved, freeing the authors from any liability related to the use.
 
 These scripts are provided as-is, with no warranties.
 We include the notice that they have not really been tested and refer to ideas on how to monitor the server in order to prevent server IP from being listed in blacklist.
