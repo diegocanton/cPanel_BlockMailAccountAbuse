@@ -30,7 +30,18 @@ O Script blockspammer.sh é apenas um teste preliminar, que será descartado no 
 Ainda busco uma ideia para identificar e barrar as contas que recebem abuso com menor frequência.
 Exemplo: Enviam 5 mensagens hora e usam o mesmo IP; Julgo dificil identifica-los, pois trata-se de comportamento praticamente comum de um usuário.
 
++Ao usar esse conjunto de scripts, você assume todos os riscos envolvidos, eximindo os autores de qualquer responsabilidade relacionada ao uso.
 
+Esses scripts são fornecidos como estão, não havendo qualquer garantias. 
+Incluimos o aviso de que não foram realmente testados e se referem a ideias de como monitorar o servidor visando evitar que o IP do servidor seja listado em blacklist.
+
+Utiliza-los também não fornece nenhuma garantia de que seu servidor não irá ser listado.
+
+Esse projeto foi desenvolvido em horas vagas e não possui qualquer suporte.
+Tentamos adicionar o máximo de comentários quanto possíveis para que tudo se tornasse mais intuitiva, tudo para poder ajuda-lo a não pedir ajuda.
+
+
+Recomendamos fortemente que você monitore sua Fila de emails, você pode fazer isso com UserParameters do Zabbix ou outro NMS que conheça. Essa abordagem foi extremamente eficiênte em nosso cenário, nos ajudando a saber quando um evento de SPAM ocorre antes mesmo do IP do servidor ser listado, nos permitindo tomar as devidas restrições.
 
 
 English Version (Translated: Google)
@@ -59,3 +70,15 @@ The blockspammer.sh script is only a preliminary test, which will be discarded i
 I'm still looking for an idea to identify and bar accounts that get abused less often.
 Example: Send 5 time messages and use the same IP; I find it difficult to identify them, because it is a user's almost common behavior.
 
++By using this set of scripts, you assume all risks involved, freeing the authors from any liability related to the use.
+
+These scripts are provided as-is, with no warranties.
+We include the notice that they have not really been tested and refer to ideas on how to monitor the server in order to prevent server IP from being listed in blacklist.
+
+Using them also does not provide any guarantee that your server will not be listed.
+
+This project was developed in open hours and does not have any support.
+We've tried to add as many comments as possible so that everything becomes more intuitive, all to help you avoid asking for help.
+
+
+We strongly recommend that you monitor your Email Queue, you can do this with Zabbix UserParameters or other NMS that you know of. This approach was extremely effective in our scenario, helping us know when a SPAM event occurs before even the server IP is listed, allowing us to take the appropriate restrictions.
