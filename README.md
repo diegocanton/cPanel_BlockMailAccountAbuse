@@ -3,6 +3,8 @@
 Tests for a function that will identify SPAMMERS and block the abused account.
 
 Just an outline of an idea, not tested.
+
+Portuguese
 --------------------------------------------------------------------
 
 Testes para uma função que irá identificar um SPAMMER que esteja abusando de uma conta e bloquea-lo automáticamente.
@@ -16,5 +18,7 @@ Como tive uma redução dos eventos grandes de SPAM, e pelo risco de bloquear us
 
 
 O Script massivespammer.sh <hour> irá buscar no log as linhas que representem logins de um usuário, se nesse tempo X uma conta tiver realizado mais de 100 logins será suspensa usando as API do cPanel/WHM e em seguida irá disparar um e-mail notificando.
-  
+A ideia é roda-lo no CRON com intervalos periódicos, como 15 minutos, onde ele irá verificar a última hora.
+
+
 O Script blockspammer.sh é apenas um teste preliminar, que será descartado no futuro.
