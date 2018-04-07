@@ -37,3 +37,4 @@ done
 ## Remover arquivos
 rm /tmp/exim_login_
 rm /tmp/list_login_ip
+rm /tmp/top_logins
