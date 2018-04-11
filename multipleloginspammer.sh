@@ -32,8 +32,8 @@ echo -e "\r\n\r\n ----------------------------------"
 for line in `cat /tmp/multlogin2`; do
     # Pega apenas as contas
     if [[ $line =~ .*@.*  ]]; then
-    ### Envia e-mail para um email alertando o bloqueio
-        echo "Bloqueamos o usuario "$line" por ter enviado mais de 100 mensagens na ultima hora para destinos que negaram a recepcao." | mail -s "Usuario "$line" bloqueado em "`hostname`" por envio de SPAM" $notify
+        ### Envia e-mail para um email alertando o bloqueio
+	    echo "Bloqueamos o usuario "$line" por ter realizado login em mais de 3 endereços IPs na ultima hora, isso foi considerada uma atividade suspeita." | mail -s "Usuario "$line" bloqueado em "`hostname`" por envio de SPAM" $notify
         # Suspende o login
         echo ${line} | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email suspend_login email="${line} | sh > /dev/null
         echo ${line} | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email hold_outgoing email="${line} | sh > /dev/null
