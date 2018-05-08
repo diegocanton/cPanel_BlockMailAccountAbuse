@@ -13,10 +13,10 @@ echo $linen
 # Processa o Log para obter logins e IPs
 sort -n /tmp/exim_login_ | uniq -c | sort -n > /tmp/list_login_ip
 
-## Imprime lista de account e quantidade de IPs que acessaram acima de 100 logins
+## Imprime lista de account e quantidade de IPs que acessaram acima de 1000 logins
 echo -e "\r\n---------   Lista de account que efetuaram logins de mais IPs    ---------"
 echo -e "\tqtde \t login"
-cat /tmp/list_login_ip | egrep "[0-9]{3,9} " > /tmp/top_logins
+cat /tmp/list_login_ip | egrep "[0-9]{4,9} " > /tmp/top_logins
 cat /tmp/top_logins
 
 echo -e "\r\n\r\n ----------------------------------"
