@@ -13,7 +13,7 @@ echo $linen
 # Processa o Log para obter logins e IPs
 sort -n /tmp/exim_login_ | uniq -c | sort -n > /tmp/list_login_ip
 # Processa a saida anterior para contabilizar de quantos IPs uma conta foi acessada
-awk '{print $2}' /tmp/list_login_ip | sort -n | uniq -c | sort -n | egrep -v "[1-2] " > /tmp/list_multlogin
+awk '{print $2}' /tmp/list_login_ip | sort -n | uniq -c | sort -n | egrep -v "[1-5] " > /tmp/list_multlogin
 
 ## Imprime lista de account e quantidade de IPs que acessaram
 echo -e "\r\n---------   Lista de account que efetuaram logins de mais IPs    ---------"
@@ -33,7 +33,7 @@ for line in `cat /tmp/multlogin2`; do
     # Pega apenas as contas
     if [[ $line =~ .*@.*  ]]; then
         ### Envia e-mail para um email alertando o bloqueio
-	    echo "Bloqueamos o usuario "$line" por ter realizado login em mais de 3 endereços IPs na ultima hora, isso foi considerada uma atividade suspeita." | mail -s "Usuario "$line" bloqueado em "`hostname`" por envio de SPAM" $notify
+	    echo "Bloqueamos o usuario "$line" por ter realizado login em mais de 5 endereços IPs na ultima $1 hora(s), isso foi considerada uma atividade suspeita." | mail -s "Usuario "$line" bloqueado em "`hostname`" por envio de SPAM" $notify
         # Suspende o login
         echo ${line} | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email suspend_login email="${line} | sh > /dev/null
         echo ${line} | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email hold_outgoing email="${line} | sh > /dev/null
