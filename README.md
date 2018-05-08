@@ -86,3 +86,13 @@ We've tried to add as many comments as possible so that everything becomes more 
 
 
 We strongly recommend that you monitor your Email Queue, you can do this with Zabbix UserParameters or other NMS that you know of. This approach was extremely effective in our scenario, helping us know when a SPAM event occurs before even the server IP is listed, allowing us to take the appropriate restrictions.
+
+
+
+
+
+-------------------
+Exemplo de uso com CRONTAB para execução a cada hora
+#### Bloquear spammers automaticamente acada 1 hora.
+58 */1 * * * /opt/massivespammer.sh 1
+58 */1 * * * /opt/multipleloginspammer.sh 1
