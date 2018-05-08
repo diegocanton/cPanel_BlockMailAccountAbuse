@@ -26,7 +26,7 @@ for line in `cat /tmp/top_logins`; do
     # Pega apenas as contas
     if [[ $line =~ .*@.*  ]]; then
 	### Envia e-mail para um email alertando o bloqueio
-        echo "Bloqueamos o usuario "$line" por ter enviado cerca de "$linen" mensagens na ultima hora para destinos que negaram a recepcao." | mail -s "Usuario "$line" bloqueado em "`hostname`" por envio de SPAM" $notify
+        echo "Bloqueamos o usuario "$line" por ter enviado cerca de "$linen" mensagens na ultima $1 hora(s) para destinos que negaram a recepcao." | mail -s "Usuario "$line" bloqueado em "`hostname`" por envio de SPAM" $notify
         # Suspende o login
         echo ${line} | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email suspend_login email="${line} | sh > /dev/null
         echo ${line} | awk -F "@" '{print "whmapi1 listaccts search="$2" searchtype=domain | grep user" }' | sh | awk -F ": " '{print $2}' | xargs -I '{}' echo "uapi --user={} Email hold_outgoing email="${line} | sh > /dev/null
