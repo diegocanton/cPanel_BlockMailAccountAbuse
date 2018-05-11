@@ -4,6 +4,18 @@ Tests for a function that will identify SPAMMERS and block the abused account.
 
 Just an outline of an idea, not tested.
 
+If you are looking for an antispam for the email entry, consider knowing the tool: https://github.com/leonamp/SPFBL
+
+This set of scripts helps identify and block accounts of your hosting that are generating spam, when a user's password is compromised (weak passwords or stolen by viruses). Basically it analyzes SMTP logins by comparing source IPs, logins, and message quantities.
+
+
+Se você procura um antispam para a entrada de e-mail, considere conhecer a ferramenta: https://github.com/leonamp/SPFBL
+
+Este conjunto de scripts ajudam a identificar e bloquear contas de sua hospedagem que estejam gerando spam, quando a senha de um usuário está comprometida (senhas fracas ou roubadas por vírus). Basicamente ele analisa os logins SMTP, comparando IPs de origem, logins e quantidades de mensagens.
+
+
+
+
 Portuguese
 --------------------------------------------------------------------
 
